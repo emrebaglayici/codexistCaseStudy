@@ -1,4 +1,4 @@
-package com.emrebaglayici.codexistcasestudy;
+package com.emrebaglayici.codexistcasestudy.Entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
