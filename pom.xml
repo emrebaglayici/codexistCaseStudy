@@ -41,6 +41,23 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.squareup.okhttp3</groupId>-->
+<!--            <artifactId>okhttp</artifactId>-->
+<!--            <version>4.4.0</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.google.code.geocoder-java/geocoder-java &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.code.geocoder-java</groupId>-->
+<!--            <artifactId>geocoder-java</artifactId>-->
+<!--            <version>0.15</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>net.sf.sprockets</groupId>-->
+<!--            <artifactId>sprockets</artifactId>-->
+<!--            <version>4.0.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
