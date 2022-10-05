@@ -8,5 +8,4 @@ import lombok.Setter;
 public class Result {
     @JsonProperty("geometry")
     private Geometry geometry;
-
 }
