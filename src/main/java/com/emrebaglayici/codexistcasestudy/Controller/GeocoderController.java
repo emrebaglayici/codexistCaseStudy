@@ -1,6 +1,7 @@
 package com.emrebaglayici.codexistcasestudy.Controller;
 
 
+import com.emrebaglayici.codexistcasestudy.Business.Abstracts.IGeocoder;
 import com.emrebaglayici.codexistcasestudy.Entity.Response;
 import com.emrebaglayici.codexistcasestudy.Security.API;
 import org.springframework.http.ResponseEntity;
@@ -15,22 +16,15 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/api/v1/")
 public class GeocoderController {
 
+    private final IGeocoder iGeocoder;
+
+    public GeocoderController(IGeocoder iGeocoder) {
+        this.iGeocoder = iGeocoder;
+    }
+
     @GetMapping("locations")
-
     public Response getGeoDetails(@RequestParam double lat, @RequestParam double lng, @RequestParam int radius){
-        String location=lat+","+lng;
-        UriComponents uri=UriComponentsBuilder.newInstance()
-                .scheme("https")
-                .host("maps.googleapis.com")
-                .path("/maps/api/place/nearbysearch/json")
-                .queryParam("location",location)
-                .queryParam("radius",radius)
-                .queryParam("key", API.API_KEY)
-                .build();
-
-        ResponseEntity<Response> response
-                =new RestTemplate().getForEntity(uri.toUriString(), Response.class);
-        return response.getBody();
+       return iGeocoder.getGeoDetails(lat,lng,radius);
     }
 
 }

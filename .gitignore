@@ -33,4 +33,5 @@ build/
 .vscode/
 
 ###
-src.main.security.API.class
+
+src\main\java\com\emrebaglayici\codexistcasestudy\Security\API.class
