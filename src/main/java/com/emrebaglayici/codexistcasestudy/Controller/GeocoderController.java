@@ -14,7 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/api/v1/")
 public class GeocoderController {
 
-    private static final Object API_KEY = "AIzaSyBZlL9_8qeZwY9aaQXTVD-1cfMOJYilvqw";
+    private static final Object API_KEY = "";
 
     @GetMapping("locations")
 

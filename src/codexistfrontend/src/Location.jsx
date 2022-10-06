@@ -6,6 +6,7 @@ import {Formik, Form, useFormik} from "formik";
 import axios from "axios";
 
 export default function Location() {
+
     const onSubmit = () => {
         axios.get('http://localhost:8070/api/v1/locations/', {
             params: {
@@ -17,8 +18,9 @@ export default function Location() {
             .catch(function (error) {
                 console.log(error)
             })
-    };
 
+
+    };
     const formik = useFormik({
         initialValues: {
             latitude: "",
