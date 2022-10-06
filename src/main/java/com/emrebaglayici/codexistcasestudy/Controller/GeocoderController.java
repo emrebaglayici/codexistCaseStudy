@@ -2,6 +2,7 @@ package com.emrebaglayici.codexistcasestudy.Controller;
 
 
 import com.emrebaglayici.codexistcasestudy.Entity.Response;
+import com.emrebaglayici.codexistcasestudy.Security.API;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -14,8 +15,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/api/v1/")
 public class GeocoderController {
 
-    private static final Object API_KEY = "";
-
     @GetMapping("locations")
 
     public Response getGeoDetails(@RequestParam double lat, @RequestParam double lng, @RequestParam int radius){
@@ -26,7 +25,8 @@ public class GeocoderController {
                 .path("/maps/api/place/nearbysearch/json")
                 .queryParam("location",location)
                 .queryParam("radius",radius)
-                .queryParam("key",API_KEY).build();
+                .queryParam("key", API.API_KEY)
+                .build();
 
         ResponseEntity<Response> response
                 =new RestTemplate().getForEntity(uri.toUriString(), Response.class);
