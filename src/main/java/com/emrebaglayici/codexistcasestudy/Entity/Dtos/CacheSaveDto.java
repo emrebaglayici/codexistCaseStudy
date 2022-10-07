@@ -10,7 +10,7 @@ public class CacheSaveDto {
     private double longitude;
     private double radius;
 
-    public Cache toCache(){
+    public Cache toCache() {
         return Cache.builder()
                 .latitude(this.latitude)
                 .longitude(this.longitude)
