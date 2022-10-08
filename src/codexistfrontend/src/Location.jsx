@@ -4,9 +4,11 @@ import {Button} from '@mui/material';
 import {Formik, Form, useFormik} from "formik";
 import axios from "axios";
 import * as Yup from 'yup';
+import 'react-notifications/lib/notifications.css';
 import './App.css';
 
 export default function Location({onValues, onCenterChange}) {
+
     const validate = Yup.object().shape({
         latitude: Yup.number()
             .required('Required'),
@@ -16,6 +18,7 @@ export default function Location({onValues, onCenterChange}) {
     });
 
     const onSubmit = () => {
+
         axios.get('http://localhost:8070/api/v1/locations/', {
             params: {
                 lat: formik.values.latitude,
@@ -42,35 +45,33 @@ export default function Location({onValues, onCenterChange}) {
             longitude: "",
             radius: "",
         },
-        validationSchema:validate,
+        validationSchema: validate,
         validateOnBlur: true,
         onSubmit,
     });
-
-
-
-    const validateInput = (str) => str.match(/^[+-]?[0-9]+([.][0-9]+)?([eE][+-]?[0-9]+)?$/);
-
     return (
         <>
             <Formik validate={validate} initialValues={formik.initialValues}>
-                {({ errors, touched }) => (
+
+                {({errors, touched}) => (
                     <Form className="ui form" onSubmit={formik.handleSubmit}>
                         <h2>Search Nearby</h2>
+                        <h4>Input values must be number. </h4>
+                        <p>Example : latitude => 38.49156648842372,
+                            longitude => 26.94799187287517, radius => 1500</p>
                         <TextField
-                            name="latitude" label={"Latitude"} value={formik.values.latitude} onChange={formik.handleChange}
-                        />
-                        {!validateInput(formik.values.latitude) && "Error latitude"}
-                        <TextField
-                            name="longitude" label={"Longitude"} value={formik.values.longitude} onChange={formik.handleChange}
+                            name="latitude" label={"Latitude"} value={formik.values.latitude}
+                            onChange={formik.handleChange}
                         />
 
-                        {!validateInput(formik.values.longitude) && "Error longitude"}
+                        <TextField
+                            name="longitude" label={"Longitude"} value={formik.values.longitude}
+                            onChange={formik.handleChange}
+                        />
 
                         <TextField
                             name="radius" label={"Radius"} value={formik.values.radius} onChange={formik.handleChange}
                         />
-                        {!validateInput(formik.values.radius) && "Error radius"}
 
                         <br/>
                         <Button className="btn-class" type="submit">
@@ -81,8 +82,6 @@ export default function Location({onValues, onCenterChange}) {
                     </Form>
                 )}
             </Formik>
-
         </>
-
     );
 }

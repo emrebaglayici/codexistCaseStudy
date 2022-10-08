@@ -8,7 +8,7 @@ const containerStyle = {
 function MapComp({values, center}) {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: ""
+        googleMapsApiKey: "AIzaSyBZlL9_8qeZwY9aaQXTVD-1cfMOJYilvqw"
     })
 
     return <>
@@ -16,9 +16,8 @@ function MapComp({values, center}) {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={10} // hesaplanabilir
-                // onLoad={onLoad}
-                // onUnmount={onUnmount}
+                zoom={10}
+                mapContainerClassName="map-class"
             >
                 {values && values.map((latLng, i) => (
                     <Marker key={i} position={latLng}></Marker>
