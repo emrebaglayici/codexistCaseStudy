@@ -19,7 +19,7 @@ export default function Location({onValues, onCenterChange}) {
 
     const onSubmit = () => {
 
-        axios.get('http://localhost:8070/api/v1/locations/', {
+        axios.get('https://case-near-by.herokuapp.com/api/v1/locations/', {
             params: {
                 lat: formik.values.latitude,
                 lng: formik.values.longitude,

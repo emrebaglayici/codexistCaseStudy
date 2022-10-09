@@ -8,7 +8,7 @@ const containerStyle = {
 function MapComp({values, center}) {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyBZlL9_8qeZwY9aaQXTVD-1cfMOJYilvqw"
+        googleMapsApiKey: ""
     })
 
     return <>
