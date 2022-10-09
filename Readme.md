@@ -13,4 +13,4 @@ Responses from Google Places API should save and if same request comes again the
 response should be returned from Postgresql DB on heroku
 
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/emrebaglayici/codexistCaseStudy/blob/master/ss.PNG "Logo Title Text 1")
