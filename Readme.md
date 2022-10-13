@@ -1,6 +1,6 @@
 # Search Near By Case Study
 
-## [Application alive on emrebaglayici.dev](https://www.emrebaglayici.dev)
+## [Application alive on emrebaglayici.dev/codexist](https://emrebaglayici.dev/codexist/)
 
 #### Back-end implemented with Spring Boot and deployed to Heroku
 #### Front-end implemented with React Js and deployed to Veridyen
