@@ -9,6 +9,7 @@ function MapComp({values, center}) {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: ""
+
     })
 
     return <>
